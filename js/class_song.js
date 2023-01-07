@@ -240,5 +240,3 @@ const song_juanes_camisa_negra = new Song({
     },
   ],
 });
-
-console.log(song_juanes_camisa_negra);
