@@ -1,0 +1,45 @@
+.lyrics {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 390px;
+}
+
+.verses {
+    align-items: center;
+    background-color: lightpink;
+    display: grid;
+    grid-template-areas:
+    "toggle_button spanish_verse check_answer"
+    ". verse_english .";
+    grid-template-columns: 0.5 5fr 0.5fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    margin: 10px;
+}
+
+.toggle_translations {
+    background-color: aqua;
+    cursor: pointer;
+    grid-area: toggle_button;
+    height: 10px;
+    width: 10px;
+}
+
+.verses_spanish {
+    background-color: blanchedalmond;
+    grid-area: spanish_verse;
+}
+
+.check_answers {
+    background-color: blueviolet;
+    grid-area: check_answer;
+    height: 10px;
+    width: 10px;
+}
+
+.verses_english {
+    background-color: lightgrey;
+    display: none;
+    grid-area: verse_english;
+}
