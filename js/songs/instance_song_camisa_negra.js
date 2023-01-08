@@ -88,7 +88,7 @@ const song_juanes_camisa_negra = new Song({
       english: "And I almost lost even my bed",
     },
     {
-      spanish: "Cama, cama, come on, baby",
+      spanish: "Come on come on come on baby",
       english: "Bed, bed, come on, baby",
     },
     {
@@ -180,7 +180,7 @@ const song_juanes_camisa_negra = new Song({
       english: "And I almost lost even my bed",
     },
     {
-      spanish: "Cama, cama, come on, baby",
+      spanish: "Come on come on come on baby",
       english: "Bed, bed, come on, baby",
     },
     {
@@ -212,7 +212,7 @@ const song_juanes_camisa_negra = new Song({
       english: "And I almost lost even my bed",
     },
     {
-      spanish: "Cama, cama, come on, baby",
+      spanish: "Come on come on come on baby",
       english: "Bed, bed, come on, baby",
     },
     {

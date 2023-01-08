@@ -1,8 +1,11 @@
 .lyrics {
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin: auto;
     text-align: center;
-    width: 390px;
+    width: 375px;
 }
 
 .verses {
@@ -28,7 +31,16 @@
 
 .verses_spanish {
     background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     grid-area: spanish_verse;
+    justify-content: center;
+}
+
+.spanish_words {
+    margin: 0 5px;
+    padding: 0;
 }
 
 .check_answers {

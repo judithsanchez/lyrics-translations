@@ -1,5 +1,6 @@
 function create_verses(container_id, song) {
   const container_lyrics = document.getElementById(container_id);
+  let word_index = 0;
 
   for (let i = 0; i < song.number_of_verses; i++) {
     const container_verse = document.createElement("div");
@@ -16,13 +17,23 @@ function create_verses(container_id, song) {
     );
     container_verse.appendChild(button_translation);
 
-    const verse_spanish = document.createElement("p");
-    verse_spanish.setAttribute("class", "verses_spanish");
-    verse_spanish.setAttribute("id", `verse_spanish${i}`);
-    container_verse.appendChild(verse_spanish);
+    const container_verse_spanish = document.createElement("div");
+    container_verse_spanish.setAttribute("class", "verses_spanish");
+    container_verse_spanish.setAttribute("id", `verse_spanish${i}`);
+    container_verse.appendChild(container_verse_spanish);
 
-    const spanish = document.createTextNode(song.lyrics[i].spanish);
-    verse_spanish.appendChild(spanish);
+    const spanish_sentence = song.lyrics[i].spanish.split(" ");
+
+    for (let j = 0; j < spanish_sentence.length; j++) {
+      const word_spanish = document.createElement("p");
+      word_spanish.setAttribute("class", "spanish_words");
+      word_spanish.setAttribute("id", `spanish_word${word_index}`);
+      container_verse_spanish.appendChild(word_spanish);
+
+      const word = document.createTextNode(spanish_sentence[j]);
+      word_spanish.appendChild(word);
+      word_index++;
+    }
 
     const check_answer = document.createElement("span");
     check_answer.setAttribute("class", "check_answers");
@@ -39,11 +50,12 @@ function create_verses(container_id, song) {
   }
 }
 
-create_verses("lyrics", song_juanes_camisa_negra);
-
 function toggle_translation(translation_id) {
   const verse_english = document.getElementById(translation_id);
 
   verse_english.style.display =
     verse_english.style.display === "flex" ? "none" : "flex";
 }
+
+// song_juanes_camisa_negra.lyrics[0].spanish.split(" ")
+// ['Tengo', 'la', 'camisa', 'negra']
