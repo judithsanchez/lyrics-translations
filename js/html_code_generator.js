@@ -48,6 +48,24 @@ function create_verses(container_id, song) {
     const english = document.createTextNode(song.lyrics[i].english);
     verse_english.appendChild(english);
   }
+
+  // Add inputs
+  const random_number = 3;
+  const word = document.getElementById(`spanish_word${3}`);
+  const input_answer = document.createElement("input");
+  input_answer.setAttribute("id", "answer3");
+  verse_spanish0.replaceChild(input_answer, word);
+
+  input_answer.addEventListener("input", function () {
+    const inputValue = input_answer.value;
+    if (inputValue === "negra") {
+      document.getElementById("check_answer0").style.backgroundColor = "green";
+      console.log("¡Texto correcto!");
+    } else {
+      console.log("Texto incorrecto");
+      document.getElementById("check_answer0").style.backgroundColor = "red";
+    }
+  });
 }
 
 function toggle_translation(translation_id) {
