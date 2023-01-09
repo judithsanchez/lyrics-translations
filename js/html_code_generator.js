@@ -1,5 +1,16 @@
-function inputHandler(_, element, feedback_element) {
-  if (element.value.toLowerCase() === element.dataset.answer.toLowerCase()) {
+function replace_letters(string) {
+  return string
+    .toLowerCase()
+    .replace(/[aeiou]/g, (c) => "áéíóú"["aeiou".indexOf(c)])
+    .replace(/ñ/g, "n")
+    .replace(/ü/g, "u");
+}
+
+function checkAnswerInputHandler(_, element, feedback_element) {
+  // if (element.value.toLowerCase() === element.dataset.answer.toLowerCase()) {
+  if (
+    replace_letters(element.value) === replace_letters(element.dataset.answer)
+  ) {
     element.dataset.correct = "true";
     feedback_element.style.backgroundColor = "green";
   } else {
@@ -8,7 +19,7 @@ function inputHandler(_, element, feedback_element) {
   }
 }
 
-function create_verses(container_id, song, generate_input = true) {
+function create_verses(container_id, song, generate_input) {
   const container_lyrics = document.getElementById(container_id);
 
   for (let i = 0; i < song.number_of_verses; i++) {
@@ -49,7 +60,7 @@ function create_verses(container_id, song, generate_input = true) {
         word_spanish.dataset.answer = spanish_sentence[j];
         word_spanish.dataset.correct = "false";
         word_spanish.addEventListener("input", (event) =>
-          inputHandler(event, word_spanish, feedback)
+          checkAnswerInputHandler(event, word_spanish, feedback)
         );
       }
       container_verse_spanish.appendChild(word_spanish);
