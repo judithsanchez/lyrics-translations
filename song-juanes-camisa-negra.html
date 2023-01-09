@@ -11,15 +11,32 @@
 </head>
 <body>
 
+<section class="song_activity">
+
+    <section class="game_selectors">
+
+        <div class="buttons" onclick="create_verses('lyrics', song_juanes_camisa_negra, false)">
+            <p>Lyrics</p>
+        </div>
+
+        <div class="buttons" onclick="create_verses('lyrics', song_juanes_camisa_negra, true)">
+            <p>Quiz</p>
+        </div>
+
+    </section>
+
+    <section class="video_container">
+        <iframe src="https://www.youtube.com/clip/UgkxmzyTABdCo2wR3plkvnai_0y7vLHbAMmK" allowfullscreen="" frameborder="0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </section>
+
     <section class="lyrics" id="lyrics"></section>
+</section>
 
     <script src="./js/class_singer.js"></script>
     <script src="./js/singers/instance_singer_juanes.js"></script>
     <script src="./js/class_song.js"></script>
     <script src="./js/songs/instance_song_camisa_negra.js"></script>
     <script src="./js/html_code_generator.js"></script>
-    <script src="./js/class_quiz_complete_sentence.js"></script>
-    <script>create_verses("lyrics", song_juanes_camisa_negra, "true");</script>
     
 </body>
 </html>

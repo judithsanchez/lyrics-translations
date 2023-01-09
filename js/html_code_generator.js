@@ -1,21 +1,20 @@
 function replace_letters(string) {
   return string
     .toLowerCase()
-    .replace(/[aeiou]/g, (c) => "áéíóú"["aeiou".indexOf(c)])
+    .replace(/[aeiou]/g, (vowel) => "áéíóú"["aeiou".indexOf(vowel)])
     .replace(/ñ/g, "n")
     .replace(/ü/g, "u");
 }
 
 function checkAnswerInputHandler(_, element, feedback_element) {
-  // if (element.value.toLowerCase() === element.dataset.answer.toLowerCase()) {
   if (
     replace_letters(element.value) === replace_letters(element.dataset.answer)
   ) {
     element.dataset.correct = "true";
-    feedback_element.style.backgroundColor = "green";
+    feedback_element.style.backgroundColor = "#6DEEBB";
   } else {
     element.dataset.correct = "false";
-    feedback_element.style.backgroundColor = "red";
+    feedback_element.style.backgroundColor = "#DB4D89";
   }
 }
 
@@ -57,6 +56,7 @@ function create_verses(container_id, song, generate_input) {
         word_spanish.appendChild(word);
       } else {
         word_spanish = document.createElement("input");
+        word_spanish.setAttribute("class", "input_answers");
         word_spanish.dataset.answer = spanish_sentence[j];
         word_spanish.dataset.correct = "false";
         word_spanish.addEventListener("input", (event) =>
