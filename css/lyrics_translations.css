@@ -20,7 +20,6 @@
     border-radius: 25px;
     color: white;
     cursor: pointer;
-    margin: 15px;
     width: 100px;
 }
 
@@ -97,7 +96,8 @@
 }
 
 .video_container {
-    display: flex;
+    align-self: center;
+    display: none;
     grid-area: video;
     height: 200px;
     margin: 25px;
