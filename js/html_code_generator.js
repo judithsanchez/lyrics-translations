@@ -77,47 +77,25 @@ function create_verses(container_id, song, generate_input) {
     verse_english.appendChild(english);
   }
 
-  // I NEED TO FIX THIS
+  const videos = [
+    { id: "video0", verse: "verse0" },
+    { id: "video1", verse: "verse4" },
+    { id: "video2", verse: "verse8" },
+    { id: "video3", verse: "verse12" },
+    { id: "video4", verse: "verse16" },
+    { id: "video5", verse: "verse24" },
+    { id: "video6", verse: "verse31" },
+    { id: "video7", verse: "verse39" },
+  ];
 
-  const video0 = document.getElementById("video0");
-  const verse0 = document.getElementById("verse0");
-  verse0.parentNode.insertBefore(video0, verse0);
-  video0.style.display = "flex";
-
-  const video1 = document.getElementById("video1");
-  const verse4 = document.getElementById("verse4");
-  verse4.parentNode.insertBefore(video1, verse4);
-  video1.style.display = "flex";
-
-  const video2 = document.getElementById("video2");
-  const verse8 = document.getElementById("verse8");
-  verse8.parentNode.insertBefore(video2, verse8);
-  video2.style.display = "flex";
-
-  const video3 = document.getElementById("video3");
-  const verse12 = document.getElementById("verse12");
-  verse12.parentNode.insertBefore(video3, verse12);
-  video3.style.display = "flex";
-
-  const video4 = document.getElementById("video4");
-  const verse16 = document.getElementById("verse16");
-  verse16.parentNode.insertBefore(video4, verse16);
-  video4.style.display = "flex";
-
-  const video5 = document.getElementById("video5");
-  const verse24 = document.getElementById("verse24");
-  verse24.parentNode.insertBefore(video5, verse24);
-  video5.style.display = "flex";
-
-  const video6 = document.getElementById("video6");
-  const verse31 = document.getElementById("verse31");
-  verse31.parentNode.insertBefore(video6, verse31);
-  video6.style.display = "flex";
-
-  const video7 = document.getElementById("video7");
-  const verse39 = document.getElementById("verse39");
-  verse39.parentNode.insertBefore(video7, verse39);
-  video7.style.display = "flex";
+  for (let i = 0; i < videos.length; i++) {
+    const video_id = videos[i].id;
+    const verse_id = videos[i].verse;
+    const video = document.getElementById(video_id);
+    const verse = document.getElementById(verse_id);
+    verse.parentNode.insertBefore(video, verse);
+    video.style.display = "flex";
+  }
 }
 
 function toggle_translation(translation_id) {
