@@ -1,6 +1,16 @@
+function inputHandler(_, element) {
+  if (element.value === element.dataset.answer) {
+    element.dataset.correct = "true";
+    document.getElementById("check_answer0").style.backgroundColor = "green";
+  } else {
+    element.dataset.correct = "false";
+    document.getElementById("check_answer0").style.backgroundColor = "red";
+  }
+}
+
 function create_verses(container_id, song) {
   const container_lyrics = document.getElementById(container_id);
-  let word_index = 0;
+  // let word_index = 0;
 
   for (let i = 0; i < song.number_of_verses; i++) {
     const container_verse = document.createElement("div");
@@ -24,15 +34,24 @@ function create_verses(container_id, song) {
 
     const spanish_sentence = song.lyrics[i].spanish.split(" ");
 
-    for (let j = 0; j < spanish_sentence.length; j++) {
-      const word_spanish = document.createElement("p");
-      word_spanish.setAttribute("class", "spanish_words");
-      word_spanish.setAttribute("id", `spanish_word${word_index}`);
-      container_verse_spanish.appendChild(word_spanish);
+    const random_number = i == 0 ? 3 : -1;
 
-      const word = document.createTextNode(spanish_sentence[j]);
-      word_spanish.appendChild(word);
-      word_index++;
+    for (let j = 0; j < spanish_sentence.length; j++) {
+      let word_spanish;
+      if (j !== random_number) {
+        word_spanish = document.createElement("p");
+        word_spanish.setAttribute("class", "spanish_words");
+        const word = document.createTextNode(spanish_sentence[j]);
+        word_spanish.appendChild(word);
+      } else {
+        word_spanish = document.createElement("input");
+        word_spanish.dataset.answer = "negra";
+        word_spanish.dataset.correct = "false";
+        word_spanish.addEventListener("input", (event) =>
+          inputHandler(event, word_spanish)
+        );
+      }
+      container_verse_spanish.appendChild(word_spanish);
     }
 
     const check_answer = document.createElement("span");
@@ -48,24 +67,6 @@ function create_verses(container_id, song) {
     const english = document.createTextNode(song.lyrics[i].english);
     verse_english.appendChild(english);
   }
-
-  // Add inputs
-  const random_number = 3;
-  const word = document.getElementById(`spanish_word${3}`);
-  const input_answer = document.createElement("input");
-  input_answer.setAttribute("id", "answer3");
-  verse_spanish0.replaceChild(input_answer, word);
-
-  input_answer.addEventListener("input", function () {
-    const inputValue = input_answer.value;
-    if (inputValue === "negra") {
-      document.getElementById("check_answer0").style.backgroundColor = "green";
-      console.log("¡Texto correcto!");
-    } else {
-      console.log("Texto incorrecto");
-      document.getElementById("check_answer0").style.backgroundColor = "red";
-    }
-  });
 }
 
 function toggle_translation(translation_id) {
