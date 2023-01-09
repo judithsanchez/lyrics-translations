@@ -14,12 +14,10 @@ function create_verses(container_id, song, generate_input = true) {
   for (let i = 0; i < song.number_of_verses; i++) {
     const container_verse = document.createElement("div");
     container_verse.setAttribute("class", "verses");
-    container_verse.setAttribute("id", `verse${i}`);
     container_lyrics.appendChild(container_verse);
 
     const button_translation = document.createElement("span");
     button_translation.setAttribute("class", "toggle_translations");
-    button_translation.setAttribute("id", `toggle_translation${i}`);
     button_translation.setAttribute(
       "onclick",
       `toggle_translation("verse_english${i}")`
@@ -28,12 +26,10 @@ function create_verses(container_id, song, generate_input = true) {
 
     const container_verse_spanish = document.createElement("div");
     container_verse_spanish.setAttribute("class", "verses_spanish");
-    container_verse_spanish.setAttribute("id", `verse_spanish${i}`);
     container_verse.appendChild(container_verse_spanish);
 
     const feedback = document.createElement("span");
     feedback.setAttribute("class", "feedbacks");
-    feedback.setAttribute("id", `feedback${i}`);
     container_verse.appendChild(feedback);
 
     const spanish_sentence = song.lyrics[i].spanish.split(" ");
