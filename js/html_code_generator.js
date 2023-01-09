@@ -1,16 +1,15 @@
-function inputHandler(_, element) {
-  if (element.value === element.dataset.answer) {
+function inputHandler(_, element, feedback_element) {
+  if (element.value.toLowerCase() === element.dataset.answer.toLowerCase()) {
     element.dataset.correct = "true";
-    document.getElementById("check_answer0").style.backgroundColor = "green";
+    feedback_element.style.backgroundColor = "green";
   } else {
     element.dataset.correct = "false";
-    document.getElementById("check_answer0").style.backgroundColor = "red";
+    feedback_element.style.backgroundColor = "red";
   }
 }
 
-function create_verses(container_id, song) {
+function create_verses(container_id, song, generate_input = true) {
   const container_lyrics = document.getElementById(container_id);
-  // let word_index = 0;
 
   for (let i = 0; i < song.number_of_verses; i++) {
     const container_verse = document.createElement("div");
@@ -32,32 +31,33 @@ function create_verses(container_id, song) {
     container_verse_spanish.setAttribute("id", `verse_spanish${i}`);
     container_verse.appendChild(container_verse_spanish);
 
+    const feedback = document.createElement("span");
+    feedback.setAttribute("class", "feedbacks");
+    feedback.setAttribute("id", `feedback${i}`);
+    container_verse.appendChild(feedback);
+
     const spanish_sentence = song.lyrics[i].spanish.split(" ");
 
-    const random_number = i == 0 ? 3 : -1;
+    let random_number = generate_input
+      ? Math.floor(Math.random() * spanish_sentence.length)
+      : -1;
 
     for (let j = 0; j < spanish_sentence.length; j++) {
       let word_spanish;
       if (j !== random_number) {
         word_spanish = document.createElement("p");
-        word_spanish.setAttribute("class", "spanish_words");
         const word = document.createTextNode(spanish_sentence[j]);
         word_spanish.appendChild(word);
       } else {
         word_spanish = document.createElement("input");
-        word_spanish.dataset.answer = "negra";
+        word_spanish.dataset.answer = spanish_sentence[j];
         word_spanish.dataset.correct = "false";
         word_spanish.addEventListener("input", (event) =>
-          inputHandler(event, word_spanish)
+          inputHandler(event, word_spanish, feedback)
         );
       }
       container_verse_spanish.appendChild(word_spanish);
     }
-
-    const check_answer = document.createElement("span");
-    check_answer.setAttribute("class", "check_answers");
-    check_answer.setAttribute("id", `check_answer${i}`);
-    container_verse.appendChild(check_answer);
 
     const verse_english = document.createElement("p");
     verse_english.setAttribute("class", "verses_english");
@@ -75,6 +75,3 @@ function toggle_translation(translation_id) {
   verse_english.style.display =
     verse_english.style.display === "flex" ? "none" : "flex";
 }
-
-// song_juanes_camisa_negra.lyrics[0].spanish.split(" ")
-// ['Tengo', 'la', 'camisa', 'negra']
