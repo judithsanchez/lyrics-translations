@@ -151,8 +151,9 @@ body {
     margin: 100px 25px 50px 25px;
     height: 225px;
     position: sticky;
-    width: 375px;
     top: 0;
+    width: 375px;
+    z-index: 2;
   }
   
   .video_container iframe {
