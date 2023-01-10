@@ -1,7 +1,3 @@
-body {
-    background-color: #464646;
-}
-
 .song_activity {
     
     display: flex;
@@ -64,9 +60,13 @@ body {
     width: 100px;
 }
 
+.buttons p {
+    margin: 0;
+    padding: 0;
+}
+
 .button_lyrics {
     background-color: #DB4D89;
-    
 }
 
 .button_quiz {
