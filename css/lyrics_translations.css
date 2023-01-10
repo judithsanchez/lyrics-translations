@@ -50,10 +50,15 @@ body {
 }
 
 .buttons {
+    align-content: center;
+    align-items: center;
     border-radius: 25px;
     color: white;
     cursor: pointer;
+    display: flex;
     font-weight: 400;
+    height: 51px;
+    justify-content: center;
     margin: 25px;
     text-align: center;
     width: 100px;
