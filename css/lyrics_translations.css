@@ -1,13 +1,11 @@
 .song_activity {
-    
+    align-items: center; 
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     margin: auto;
-    align-items: center;
-    
-    
 }
+
 .introduction {
     background-image: url("https://bocaditosespanol.com/wp-content/uploads/2022/12/practice_background.svg");
     background-position: center;
@@ -36,7 +34,6 @@
 .list li {
     margin: 10px 0;
 }
-
 
 .game_selectors {
     display: flex;
@@ -166,3 +163,28 @@
     width: 100%;
     height: 100%;
   }
+
+  .no_landcape_mobile_mode {
+    display: none;
+  }
+
+
+
+  @media (orientation: landscape) and (max-width: 1000px) {
+    .no_landcape_mobile_mode {
+        align-content: center;
+       display: flex;
+       height: 300px;
+       margin: auto;
+       width: 700px;
+    }
+
+    .no_landcape_mobile_mode p {
+        align-self: center;
+    }
+
+ 
+    .song_activity {
+       display: none;
+    }
+ }
