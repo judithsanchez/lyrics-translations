@@ -1,36 +1,56 @@
+body {
+    background-color: #464646;
+}
+
+.introduction {
+    background-image: url("https://bocaditosespanol.com/wp-content/uploads/2022/12/practice_background.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
 .song_activity {
+    align-items: center;
     color: #464646;
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     margin: auto;
-    text-align: center;
-    width: 375px;
+    
 }
 
 .game_selectors {
-    align-items: center;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row;    
 }
 
 .buttons {
-    background-color: #47D8E0;
     border-radius: 25px;
     color: white;
     cursor: pointer;
     width: 100px;
+    margin: 25px;
+}
+
+.button_lyrics {
+    background-color: #DB4D89;
+}
+
+.button_quiz {
+    background-color: #7F7DCF;
 }
 
 .lyrics {
     display: flex;
     flex-direction: column;
     font-size: 20px;
+    width: 375px;
 }
 
 .verses {
     align-items: center;
+    background-color: white;
     border: 0px lightgray solid;
     box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
@@ -96,15 +116,19 @@
 }
 
 .video_container {
-    align-self: center;
-    display: none;
+    border-radius: 25px;
+    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
     grid-area: video;
-    height: 200px;
     margin: 25px;
-    width: 300px;
+    height: 225px;
+    position: sticky;
+    width: 375px;
+    top: 0;
   }
   
   .video_container iframe {
+    border-radius: 25px;
     width: 100%;
     height: 100%;
   }

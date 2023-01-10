@@ -76,26 +76,6 @@ function create_verses(container_id, song, generate_input) {
     const english = document.createTextNode(song.lyrics[i].english);
     verse_english.appendChild(english);
   }
-
-  const videos = [
-    { id: "video0", verse: "verse0" },
-    { id: "video1", verse: "verse4" },
-    { id: "video2", verse: "verse8" },
-    { id: "video3", verse: "verse12" },
-    { id: "video4", verse: "verse16" },
-    { id: "video5", verse: "verse24" },
-    { id: "video6", verse: "verse31" },
-    { id: "video7", verse: "verse39" },
-  ];
-
-  for (let i = 0; i < videos.length; i++) {
-    const video_id = videos[i].id;
-    const verse_id = videos[i].verse;
-    const video = document.getElementById(video_id);
-    const verse = document.getElementById(verse_id);
-    verse.parentNode.insertBefore(video, verse);
-    video.style.display = "flex";
-  }
 }
 
 function toggle_translation(translation_id) {
