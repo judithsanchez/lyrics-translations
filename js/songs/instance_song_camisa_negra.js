@@ -9,7 +9,7 @@ const song_juanes_camisa_negra = new Song({
   lyrics: [
     {
       spanish: "Tengo la camisa negra",
-      english: "My shirt is black",
+      english: "I have the black shirt",
     },
     {
       spanish: "Hoy mi amor está de luto",
@@ -33,7 +33,7 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Que tengo la camisa negra",
-      english: "That I have the black shirt",
+      english: "So I have the black shirt",
     },
     {
       spanish: "Y una pena que me duele",
@@ -41,11 +41,11 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Mal parece que solo me quedé",
-      english: "It seems bad that I only stayed",
+      english: "It seems bad that I ended up alone",
     },
     {
       spanish: "Y fue pura todita tu mentira",
-      english: "And it was all your lie",
+      english: "And it was purely and totally a lie",
     },
     {
       spanish: "Qué maldita mala suerte la mía",
@@ -89,11 +89,11 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Come on come on come on baby",
-      english: "Bed, bed, come on, baby",
+      english: "Come on, come on, come on, baby",
     },
     {
       spanish: "Te digo con disimulo",
-      english: "I tell you with dissimulation",
+      english: "I whisper to you",
     },
     {
       spanish: "Que tengo la camisa negra",
@@ -113,7 +113,7 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Hoy me sabe a pura",
-      english: "Today it tastes pure",
+      english: "Today it tastes like pure...",
     },
     {
       spanish: "Miércoles por la tarde y tú que no llegas",
@@ -137,7 +137,7 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Y fue pura todita tu mentira",
-      english: "And it was all your lie",
+      english: "And it was purely and totally your lie",
     },
     {
       spanish: "Qué maldita mala suerte la mía",
@@ -181,11 +181,11 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Come on come on come on baby",
-      english: "Bed, bed, come on, baby",
+      english: "Come on, come on, come on, baby",
     },
     {
       spanish: "Te digo con disimulo",
-      english: "I tell you with dissimulation",
+      english: "I whisper to you",
     },
     {
       spanish: "Que tengo la camisa negra",
@@ -213,11 +213,11 @@ const song_juanes_camisa_negra = new Song({
     },
     {
       spanish: "Come on come on come on baby",
-      english: "Bed, bed, come on, baby",
+      english: "Come on, come on, come on, baby",
     },
     {
       spanish: "Te digo con disimulo",
-      english: "I tell you with dissimulation",
+      english: "I whisper to you",
     },
     {
       spanish: "Que tengo la camisa negra",
