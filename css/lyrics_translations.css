@@ -147,13 +147,14 @@
     display: none;
     font-size: 18px;
     grid-area: verse_english;
+    justify-content: center;
     margin-top: 20px;
     text-align: center;
 }
 
 .verses_english p {
     margin: 0;
-    padding: 5px 0px;
+    padding: 0;
 }
 
 
