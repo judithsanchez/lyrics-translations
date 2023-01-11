@@ -1,5 +1,6 @@
 function replace_letters(string) {
   return string
+    .trim()
     .toLowerCase()
     .replace(/[aeiou]/g, (vowel) => "áéíóú"["aeiou".indexOf(vowel)])
     .replace(/ñ/g, "n")
@@ -11,10 +12,12 @@ function checkAnswerInputHandler(_, element, feedback_element) {
     replace_letters(element.value) === replace_letters(element.dataset.answer)
   ) {
     element.dataset.correct = "true";
-    feedback_element.style.backgroundColor = "#6DEEBB";
+    feedback_element.src =
+      "https://bocaditosespanol.com/wp-content/uploads/2023/01/icon-thumbs-up.svg";
   } else {
     element.dataset.correct = "false";
-    feedback_element.style.backgroundColor = "#DB4D89";
+    feedback_element.src =
+      "https://bocaditosespanol.com/wp-content/uploads/2023/01/icon-thumbs-down.svg";
   }
 }
 
@@ -28,7 +31,12 @@ function create_verses(container_id, song, generate_input) {
     container_verse.setAttribute("id", `verse${i}`);
     container_lyrics.appendChild(container_verse);
 
-    const button_translation = document.createElement("span");
+    const button_translation = document.createElement("img");
+    button_translation.setAttribute(
+      "src",
+      "https://bocaditosespanol.com/wp-content/uploads/2023/01/icon-translation-text.svg"
+    );
+
     button_translation.setAttribute("class", "toggle_translations");
     button_translation.setAttribute(
       "onclick",
@@ -40,7 +48,11 @@ function create_verses(container_id, song, generate_input) {
     container_verse_spanish.setAttribute("class", "verses_spanish");
     container_verse.appendChild(container_verse_spanish);
 
-    const feedback = document.createElement("span");
+    const feedback = document.createElement("img");
+    feedback.setAttribute(
+      "src",
+      "https://bocaditosespanol.com/wp-content/uploads/2023/01/icon-thumbs-down.svg"
+    );
     feedback.setAttribute("class", "feedbacks");
     container_verse.appendChild(feedback);
 
@@ -59,8 +71,10 @@ function create_verses(container_id, song, generate_input) {
       } else {
         word_spanish = document.createElement("input");
         word_spanish.setAttribute("class", "input_answers");
+        word_spanish.setAttribute("id", `input_answer${j}`);
         word_spanish.dataset.answer = spanish_sentence[j];
         word_spanish.dataset.correct = "false";
+
         word_spanish.addEventListener("input", (event) =>
           checkAnswerInputHandler(event, word_spanish, feedback)
         );
@@ -68,13 +82,21 @@ function create_verses(container_id, song, generate_input) {
       container_verse_spanish.appendChild(word_spanish);
     }
 
-    const verse_english = document.createElement("p");
+    const verse_english = document.createElement("div");
     verse_english.setAttribute("class", "verses_english");
     verse_english.setAttribute("id", `verse_english${i}`);
     container_verse.appendChild(verse_english);
 
+    const words_english = document.createElement("p");
+    verse_english.appendChild(words_english);
+
     const english = document.createTextNode(song.lyrics[i].english);
-    verse_english.appendChild(english);
+    words_english.appendChild(english);
+  }
+
+  if (generate_input === true) {
+    const elements = document.querySelectorAll(".feedbacks");
+    elements.forEach((element) => (element.style.visibility = "visible"));
   }
 }
 

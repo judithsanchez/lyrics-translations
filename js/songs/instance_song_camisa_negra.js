@@ -160,7 +160,7 @@ const song_juanes_camisa_negra = new Song({
       english: "I breathed in that bitter smoke of your goodbye",
     },
     {
-      spanish: "Y desde que tú te fuiste, yo solo tengo",
+      spanish: "Y desde que tú te fuiste yo solo tengo",
       english: "And since you left, I only have",
     },
     {

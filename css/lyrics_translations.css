@@ -1,9 +1,8 @@
 .song_activity {
-    align-items: center; 
+    align-items: center;
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    margin: auto;
 }
 
 .introduction {
@@ -17,22 +16,13 @@
 }
 
 .title {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 32px;
+    font-weight: 700;
     text-align: center;
 }
 
-.intro{
-    margin: 15px 50px;
-}
-
-.list {
-    margin-left: 25px;
-    margin-right: 50px;
-}
-
-.list li {
-    margin: 10px 0;
+.introduction p {
+    margin: 10px 25px;
 }
 
 .game_selectors {
@@ -70,87 +60,13 @@
     background-color: #7F7DCF;
 }
 
-.lyrics {
-    color: #464646;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-    width: 375px;
-}
-
-.verses {
-    align-items: center;
-    background-color: white;
-    border: 0px lightgray solid;
-    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
-    display: grid;
-    grid-template-areas:
-    "toggle_button spanish_verse feedback"
-    ". verse_english .";
-    grid-template-columns: 0.5 5fr 0.5fr;
-    grid-template-rows: auto;
-    margin: 5px;
-    padding: 10px 10px;
-}
-
-.toggle_translations {
-    background-color: #47D8E0;
-    border-radius: 50%;
-    cursor: pointer;
-    grid-area: toggle_button;
-    height: 25px;
-    margin-right: 20px;
-    width: 25px;
-}
-
-.verses_spanish {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-area: spanish_verse;
-    justify-content: space-evenly;
-
-}
-
-.verses_spanish > p {
-    margin: 10px 5px;
-    padding: 0;
-}
-
-.input_answers {
-    border: none 0px white;
-    border-radius: 25px;
-    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25) !important;
-    font-size: 18px;
-    height: 40px;
-    outline: none;
-    text-align: center;
-    width: 150px;
-}
-
-.feedbacks {
-    background-color: #7F7DCF;
-    border-radius: 50%;
-    grid-area: feedback;
-    margin-left: 20px;
-    height: 25px;
-    width: 25px;
-}
-
-.verses_english {
-    background-color: #FFD600;
-    display: none;
-    font-size: 18px;
-    grid-area: verse_english;
-}
-
 .video_container {
     border-radius: 25px;
     box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     grid-area: video;
-    margin: 100px 25px 50px 25px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     height: 225px;
     position: sticky;
     top: 0;
@@ -164,8 +80,90 @@
     height: 100%;
   }
 
+.lyrics {
+
+    color: #464646;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 375px;
+}
+
+.toggle_translations {
+    cursor: pointer;
+    grid-area: toggle_button;
+    width: 30px;
+}
+
+.verses {
+    background-color: white;
+    border: 0px lightgray solid;
+    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    display: grid;
+    grid-template-areas:
+    "toggle_button spanish_verse feedback"
+    ". verse_english .";
+    grid-template-columns: 0.5 1fr 0.5fr;
+    grid-template-rows: auto;
+    margin: 10px 0;
+    padding: 25px 0;
+    width: 375px;
+}
+
+.verses_spanish {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-area: spanish_verse;
+    justify-content: space-evenly;
+}
+
+.verses_spanish > p {
+    margin: 10px 2.5px;
+    padding: 0;
+}
+
+.input_answers {
+    align-self: center;
+    background-color: lightgrey;
+    border: solid 1px lightgray;
+    font-size: 18px;
+    height: 25px;
+    margin: 0 10px;
+    outline: none;
+    text-align: center;
+    width: 125px;
+}
+
+.feedbacks {
+    visibility: hidden;
+    grid-area: feedback;
+    width: 30px;
+}
+
+.verses_english {
+    background-color: #FFD600;
+    display: none;
+    font-size: 18px;
+    grid-area: verse_english;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.verses_english p {
+    margin: 0;
+    padding: 5px 0px;
+}
+
+
   .no_landcape_mobile_mode {
     display: none;
+  }
+
+
+  .toggle_translations, .feedbacks  {
+    margin: 15px;
   }
 
 
