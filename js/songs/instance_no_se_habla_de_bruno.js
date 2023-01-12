@@ -4,8 +4,7 @@ const song_no_se_habla_de_bruno = new Song({
   album: "Encanto",
   spotify:
     "https://open.spotify.com/track/5QKk5N5xJQGsWMhPM80Kfv?si=8e678f011be340c9",
-  youtube:
-    "https://www.youtube.com/watch?v=wTi8yLyHeb8&ab_channel=DisneyMusicLAVEVO",
+  youtube: "https://www.youtube.com/embed/wTi8yLyHeb8",
   lyrics: [
     {
       spanish: "No se habla de Bruno no no no",
