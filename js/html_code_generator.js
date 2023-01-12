@@ -100,6 +100,23 @@ function create_verses(container_id, song, generate_input) {
   }
 }
 
+function populate_video_container(song_info) {
+  const container = document.getElementById("video_container");
+  const video = document.createElement("iframe");
+  video.setAttribute("src", song_info.youtube);
+  video.setAttribute("title", "YouTube video player");
+  video.setAttribute("frameborder", "0");
+  video.setAttribute(
+    "allow",
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  );
+  video.setAttribute("allowfullscreen", "");
+  console.log(container);
+  console.log(video);
+
+  container.appendChild(video);
+}
+
 function toggle_translation(translation_id) {
   const verse_english = document.getElementById(translation_id);
 
