@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingüinos en la cama</title>
+    <link rel="stylesheet" href="./css/lyrics_translations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<section class="song_activity">
+
+    
+    <section class="introduction">
+        <h1 class="title">Spanish Song #04 - Pingüinos en la cama</h1>
+
+        <p>👂🏻 Welcome to our listening activity featuring a popular Spanish song! In this activity, you'll have the opportunity to practice your listening skills and expand your vocabulary.</p>
+        <p>💃🏻 Put on your dancing shoes and press play on the video at the bottom of the page.</p>
+        <p>🚑 Follow along with the lyrics below, or in case of emergency, have a look at the English translation using the blue button.</p>
+        <p>😏 If you're feeling extra spicy, try the quiz mode on the purple button.</p>
+        <p>✍🏻 Use the input field to type in your answer, and the right button will let you know if you're correct or incorrect. Green means you're on the right track, while fucsia means you might want to try again.</p>
+        <p>😌 If you get stuck, just close your eyes and let the rhythm take over.</p>
+        <p>🚿 If you still can't figure it out, try singing it in the shower. That always helps.</p>
+        <p>🤤 Once you've completed the song, pat yourself on the back and reward yourself with a churro.</p>
+        <p>🤩 Repeat until you've mastered the song and can perform it at your next karaoke party. ¡Buena suerte!</p>
+
+        <section class="game_selectors">
+    
+            <div class="buttons button_lyrics" onclick="create_verses('lyrics', song_ricardo_arjona_pinguinos_en_la_cama, false)">
+                <p>Lyrics</p>
+            </div>
+    
+            <div class="buttons button_quiz" onclick="create_verses('lyrics', song_ricardo_arjona_pinguinos_en_la_cama, true)">
+                <p>Quiz</p>
+            </div>
+    
+        </section>
+    </section>
+
+
+    <section class="video_container" id="video_container">
+        <iframe src="https://www.youtube.com/embed/wTi8yLyHeb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+    <section class="lyrics" id="lyrics"></section>
+
+    
+</section>
+
+<section class="no_landcape_mobile_mode" id="no_landcape_mobile_mode">
+
+    <img alt="Webby having a tantrum" class="angry_witch" id="angry_witch" src="https://bocaditosespanol.com/wp-content/uploads/2022/10/characters-bruja-enfadada.svg">
+    <p>⚠️ Watch out for Webby, the malevolent Internet Witch! She haunts the landscape mode of small devices, causing chaos and mischief. Stay safe and stick to portrait mode. ⚠️</p>
+
+ </section>
+
+    <script src="./js/class_singer.js"></script>
+    <script src="./js/singers/instance_singer_ricardo_arjona.js"></script>
+    <script src="./js/class_song.js"></script>
+    <script src="./js/songs/instance_song_pinguinos_en_la_cama.js"></script>
+    <script src="./js/html_code_generator.js"></script>
+
+</body>
+</html>

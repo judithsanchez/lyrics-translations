@@ -69,7 +69,7 @@ const song_bacilos_caraluna = new Song({
       english: "While I keep hearing your voice",
     },
     {
-      spanish: "Entre las olas, entre la espuma",
+      spanish: "Entre las olas entre la espuma",
       english: "Among the waves, among the foam",
     },
     {
