@@ -4,7 +4,7 @@ const song_juanes_camisa_negra = new Song({
   album: "Mi sangre",
   spotify:
     "https://open.spotify.com/track/2EM9zpAc7PVeoAydmbfVIL?si=c857e2e0689745ab",
-  youtube: "https://www.youtube.com/embed/kRt2sRyup6A",
+  youtube: "https://www.youtube.com/watch?v=kRt2sRyup6A",
   lyrics: [
     {
       spanish: "Tengo la camisa negra",

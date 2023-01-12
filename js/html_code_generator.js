@@ -100,22 +100,6 @@ function create_verses(container_id, song, generate_input) {
   }
 }
 
-function add_video_iframe(containerID, song) {
-  const video_container = document.getElementById(containerID);
-
-  const video_iframe = document.createElement("iframe");
-  video_iframe.setAttribute("src", song.youtube);
-  video_iframe.setAttribute("title", "YouTube video player");
-  video_iframe.setAttribute("frameborder", "0");
-  video_iframe.setAttribute(
-    "allow",
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  );
-  video_iframe.setAttribute("allowfullscreen", "");
-
-  video_container.appendChild(video_iframe);
-}
-
 function toggle_translation(translation_id) {
   const verse_english = document.getElementById(translation_id);
 
