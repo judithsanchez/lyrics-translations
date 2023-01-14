@@ -29,12 +29,16 @@
 
         <section class="game_selectors">
     
-            <div class="buttons button_lyrics" onclick="create_verses('lyrics', song_shakira_ciega_sordomuda, false)">
+            <div class="buttons button_lyrics" onclick="create_verses('lyrics', song_shakira_ciega_sordomuda, null)">
                 <p>Lyrics</p>
             </div>
     
-            <div class="buttons button_quiz" onclick="create_verses('lyrics', song_shakira_ciega_sordomuda, true)">
+            <div class="buttons button_quiz" onclick="create_verses('lyrics', song_shakira_ciega_sordomuda, 'word')">
                 <p>Quiz</p>
+            </div>
+
+            <div class="buttons button_quiz" onclick="create_verses('lyrics', song_shakira_ciega_sordomuda, 'lyrics')">
+                <p>Translate</p>
             </div>
     
         </section>
