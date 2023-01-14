@@ -21,7 +21,32 @@ function checkAnswerInputHandler(_, element, feedback_element) {
   }
 }
 
-function create_verses(container_id, song, generate_input) {
+async function checkVerseInputHandler(_, element) {
+  console.log("in verse handler");
+  const input = element.value;
+  const lyrics = element.dataset.answer;
+
+  // prevent API abuse
+  if (input.length < 3 || input === element.dataset.lastattempt) {return;}
+
+  const required_score = 0.70;
+  const score = await check_sentence_similarity(element.value, element.dataset.answer);
+  console.log(`Score: ${score}`);
+  console.log(`Score > ${required_score}? ${score > required_score}`);
+  console.log(`if statement: ${(input.toLowerCase() === lyrics.toLowerCase()) || score > required_score}`);
+  if ((input.toLowerCase() === lyrics.toLowerCase()) || (score > required_score)) {
+    console.log("correct!")
+    element.style.backgroundColor = "green";
+  } else {
+    console.log("wrong :(")
+    element.style.backgroundColor = "red";
+  }
+
+  // store the value we've called with to allow skipping logic
+  element.dataset.lastattempt = input;
+}
+
+function create_verses(container_id, song, input_type) {
   const container_lyrics = document.getElementById(container_id);
   container_lyrics.innerHTML = " ";
 
@@ -58,7 +83,7 @@ function create_verses(container_id, song, generate_input) {
 
     const spanish_sentence = song.lyrics[i].spanish.split(" ");
 
-    let random_number = generate_input
+    let random_number = (input_type === 'word')
       ? Math.floor(Math.random() * spanish_sentence.length)
       : -1;
 
@@ -82,6 +107,17 @@ function create_verses(container_id, song, generate_input) {
       container_verse_spanish.appendChild(word_spanish);
     }
 
+    if (input_type === 'lyrics') {
+      const verse_translation = document.createElement("input");
+      verse_translation.setAttribute("class", "input_lyrics");
+      verse_translation.dataset.answer = song.lyrics[i].english;
+      // can't do this as rapidly as input or we'll get blocked from the API
+      verse_translation.addEventListener("blur", (event) =>
+        checkVerseInputHandler(event, verse_translation)
+      );
+      container_verse.appendChild(verse_translation);
+    }
+
     const verse_english = document.createElement("div");
     verse_english.setAttribute("class", "verses_english");
     verse_english.setAttribute("id", `verse_english${i}`);
@@ -94,7 +130,7 @@ function create_verses(container_id, song, generate_input) {
     words_english.appendChild(english);
   }
 
-  if (generate_input === true) {
+  if (input_type === 'word') {
     const elements = document.querySelectorAll(".feedbacks");
     elements.forEach((element) => (element.style.visibility = "visible"));
   }
@@ -105,4 +141,20 @@ function toggle_translation(translation_id) {
 
   verse_english.style.display =
     verse_english.style.display === "flex" ? "none" : "flex";
+}
+
+async function check_sentence_similarity(translated_lyrics, user_sentence) {
+  const response = await fetch('https://api-inference.huggingface.co/models/sentence-transformers/all-mpnet-base-v2', {
+    method: 'POST',
+    mode: 'cors',
+    //headers: {
+    //  'Authorization': 'Bearer ABC123,
+    //},
+    body: JSON.stringify({
+      source_sentence: translated_lyrics,
+      sentences: [user_sentence],
+    }),
+  });
+  const scores = await response.json();
+  return scores[0];
 }
