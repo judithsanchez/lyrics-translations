@@ -119,7 +119,7 @@ const song_no_se_habla_de_bruno = new Song({
       english: "When he calls your name it all fades to black",
     },
     {
-      spanish: "Grita mientras tiembles al despertar",
+      spanish: "Grita mientras tiemblas al despertar",
       english: "It all fades to black",
     },
     {
@@ -183,14 +183,6 @@ const song_no_se_habla_de_bruno = new Song({
       english: "I want not a sound out of you",
     },
     {
-      spanish: "Cual si lo pudiera oír",
-      english: "It's like I can hear him now",
-    },
-    {
-      spanish: "Yo lo puedo oír",
-      english: "I can hear him now",
-    },
-    {
       spanish: "Oh Bruno sí sobre Bruno",
       english: "Um, Bruno, yeah, about that Bruno... ",
     },
@@ -210,10 +202,6 @@ const song_no_se_habla_de_bruno = new Song({
     {
       spanish: "A la mesa",
       english: "Time for dinner!",
-    },
-    {
-      spanish: "Llegaron",
-      english: "He's here!",
     },
     {
       spanish: "No hablemos de Bruno",

@@ -23,7 +23,7 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "Because this love no longer understands",
     },
     {
-      spanish: "De consejos, ni razones",
+      spanish: "De consejos ni razones",
       english: "Advice or reasons",
     },
     {
@@ -51,11 +51,11 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "If you come closer nothing is useful for this useless",
     },
     {
-      spanish: "Bruta, ciega, sordomuda",
+      spanish: "Bruta ciega sordomuda",
       english: "Brute, blind, deaf and mute",
     },
     {
-      spanish: "Torpe, traste y testaruda",
+      spanish: "Torpe traste y testaruda",
       english: "Clumsy, trash and stubborn",
     },
     {
@@ -127,11 +127,11 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "And hide so I don't feel again",
     },
     {
-      spanish: "Bruta, ciega, sordomuda",
+      spanish: "Bruta ciega sordomuda",
       english: "Brute, blind, deaf and mute",
     },
     {
-      spanish: "Torpe, traste y testaruda",
+      spanish: "Torpe traste y testaruda",
       english: "Clumsy, trash and stubborn",
     },
     {
@@ -159,8 +159,8 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "Red-eyed, skinny, ugly, disheveled",
     },
     {
-      spanish: "Torpe tonta lenta nécia desquiciada",
-      english: "Clumsy, foolish, slow, dull, unhinged",
+      spanish: "Torpe tonta lenta necia desquiciada",
+      english: "Clumsy, foolish, slow, annoying, unhinged",
     },
 
     {
@@ -188,11 +188,11 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "Look well at what you're going to do with me",
     },
     {
-      spanish: "Bruta, ciega, sordomuda",
+      spanish: "Bruta ciega sordomuda",
       english: "Brute, blind, deaf and mute",
     },
     {
-      spanish: "Torpe, traste y testaruda",
+      spanish: "Torpe traste y testaruda",
       english: "Clumsy, trash and stubborn",
     },
     {
@@ -216,11 +216,11 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "And I don't know how to forget you",
     },
     {
-      spanish: "Bruta, ciega, sordomuda",
+      spanish: "Bruta ciega sordomuda",
       english: "Brute, blind, deaf and mute",
     },
     {
-      spanish: "Torpe, traste y testaruda",
+      spanish: "Torpe traste y testaruda",
       english: "Clumsy, trash and stubborn",
     },
     {
@@ -245,7 +245,7 @@ const song_shakira_ciega_sordomuda = new Song({
       english: "And I don't know how to forget you",
     },
     {
-      spanish: "Bruta, ciega, sordomuda",
+      spanish: "Bruta ciega sordomuda",
       english: "Brute, blind, deaf and mute",
     },
     {
